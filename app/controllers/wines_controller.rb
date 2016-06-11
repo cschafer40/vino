@@ -45,7 +45,6 @@ class WinesController < ApplicationController
     @wine.rating = params[:rating]
     @wine.style_grape = params[:style_grape]
     @wine.brand = params[:brand]
-    @wine.label = params [:label]
 
     if @wine.save
       redirect_to "/wines", :notice => "Wine updated successfully."
