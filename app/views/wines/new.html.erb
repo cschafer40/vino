@@ -30,12 +30,11 @@
       <!-- Label and input for style_grape -->
       <div class="form-group">
         <label for="style_grape" class="control-label">
-          Style grape
+          Style/Grape
         </label>
 
-        <input type="text" id="style_grape" name="style_grape" placeholder="Style grape" class="form-control" value="<%= @wine.style_grape %>">
+        <input type="text" id="style_grape" name="style_grape" placeholder="Style or Grape Varietal" class="form-control" value="<%= @wine.style_grape %>">
       </div>
-
 
       <!-- Label and input for label -->
       <div class="form-group">
@@ -54,7 +53,7 @@
 
         <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @wine.rating %>">
       </div>
-      
+
       <!-- Label and input for description -->
       <div class="form-group">
         <label for="description" class="control-label">
@@ -82,14 +81,6 @@
 
         <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @wine.price %>">
       </div>
-
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @wine.user_id %>">
 
       </div>
       <button class="btn btn-success">
