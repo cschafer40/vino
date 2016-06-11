@@ -1,0 +1,102 @@
+<!-- Validation failure messages -->
+<% if @wine.errors.any? %>
+<% @wine.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Wine</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form enctype="multipart/form-data" action="/create_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @wine.brand %>">
+      </div>
+
+      <!-- Label and input for style_grape -->
+      <div class="form-group">
+        <label for="style_grape" class="control-label">
+          Style grape
+        </label>
+
+        <input type="text" id="style_grape" name="style_grape" placeholder="Style grape" class="form-control" value="<%= @wine.style_grape %>">
+      </div>
+
+
+      <!-- Label and input for label -->
+      <div class="form-group">
+        <label for="label" class="control-label">
+          Label
+        </label>
+
+        <input id="label" type="file" name="label" value="" class="form-control">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @wine.rating %>">
+      </div>
+      
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @wine.description %></textarea>
+      </div>
+
+
+      <!-- Label and input for store -->
+      <div class="form-group">
+        <label for="store" class="control-label">
+          Buy At
+        </label>
+
+        <input type="text" id="store" name="store" placeholder="Store" class="form-control" value="<%= @wine.store %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @wine.price %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @wine.user_id %>">
+
+      </div>
+      <button class="btn btn-success">
+        Create Wine
+      </button>
+      or
+      <a href="/wines">Cancel</a>
+    </form>
+  </div>
+</div>
